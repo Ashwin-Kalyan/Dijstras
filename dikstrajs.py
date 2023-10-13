@@ -1,5 +1,15 @@
 import heapq
 
+graph = {
+    0: [(1, 1)],
+    1: [(0, 1), (2, 2), (3, 3)],
+    2: [(1, 2), (3, 1), (4, 5)],
+    3: [(1, 3), (2, 1), (4, 1)],
+    4: [(2, 5), (3, 1)]
+}
+
+source = 1
+
 def dijkstra(graph, source):
   """
   Dijkstra's algorithm for finding the shortest paths between nodes in a graph.
@@ -35,3 +45,5 @@ def dijkstra(graph, source):
         heapq.heappush(pq, (new_distance, neighbor))
 
   return distances
+
+dijkstra(graph=graph, source=source)
