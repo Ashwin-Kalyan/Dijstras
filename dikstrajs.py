@@ -39,7 +39,7 @@ def dijkstra(graph, source):
 
     # For each neighbor of the current node, update the distance if necessary.
     for neighbor in graph[current_node]:
-      new_distance = current_distance + graph[current_node][neighbor]
+      new_distance = current_distance + graph[neighbor]
       if new_distance < distances[neighbor]:
         distances[neighbor] = new_distance
         heapq.heappush(pq, (new_distance, neighbor))
